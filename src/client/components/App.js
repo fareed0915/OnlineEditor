@@ -4,12 +4,13 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
 import Editor from './Editor';
-
+import Login from "./Login.js"
 const App = () => (
   <div>
     <Header />
     <Switch>
-      <Route exact path="/" component={Home} />
+      
+      <Route exact path="/" component={Login} />
       <Route path="/editor" component={Editor} />
     </Switch>
     <Footer />

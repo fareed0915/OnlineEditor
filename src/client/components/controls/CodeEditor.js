@@ -11,6 +11,7 @@ import 'brace/theme/github';
 
 const editorStyle = {
   border: '1px solid lightgray',
+  //editor: "ace/theme/twilight"
 };
 
 class CodeEditor extends React.Component {
@@ -20,7 +21,7 @@ class CodeEditor extends React.Component {
 
     this.onChange = this.onChange.bind(this);
   }
-
+ 
   onChange(newValue) {
     this.props.onChange(newValue);
   }
@@ -32,7 +33,7 @@ class CodeEditor extends React.Component {
         readOnly={false}
         onChange={this.onChange}
         width="100%"
-        height="200px"
+        height="300px"
         mode="java"
         theme="github"
         name="aceCodeEditor"
@@ -47,10 +48,21 @@ class CodeEditor extends React.Component {
           enableBasicAutocompletion: true,
           enableLiveAutocompletion: true,
           enableSnippets: true,
+          
         }}
         setOptions={{
           showLineNumbers: true,
           tabSize: 2,
+          useWrapMode: true,
+          highlightActiveLine: true,
+          showPrintMargin: false,
+          theme: 'ace/theme/tomorrow_night',
+          mode: 'ace/mode/javascript'
+        }}
+        
+        setTheme={{
+          theme: 'ace/theme/tomorrow_night',
+          mode: 'ace/mode/javascript'
         }}
       />
     );
