@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import "/Users/fareedbalogun/Desktop/my-app/code-editor-react/src/client/components/styles.css";
-
+var cisco= document.createElement("img");
+cisco.src="/Users/fareedbalogun/Desktop/my-app/code-editor-react/public/images/cisco_corporate_logo_blue2-jpg-1889920-1-0.jpg"
+document.body.appendChild(cisco)
 function Login() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
@@ -78,7 +80,8 @@ function Login() {
   return (
     <div className="app">
       <div className="login-form">
-        <div className="title">Sign In</div>
+      <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com"/>
+        <div className="title"> Cisco Sign In</div>
         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
       </div>
     </div>
