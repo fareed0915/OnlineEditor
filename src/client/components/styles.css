@@ -1,20 +1,22 @@
 .app {
-    font-family: CiscoSans;
+    font-family: Arial;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 20px;
-    height: 100vh;
+    height: 90vh;
     font-family: Arial;
-    background-color: #f8f9fd;
+    background-color: #009EDC;
   }
   
   input[type="text"],
   input[type="password"] {
     height: 25px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    color: #009EDC;
+    border: 1px solid #009EDC;
+    color: black;
+    border-radius: 10px;
+    
   }
   
   input[type="submit"] {
@@ -22,13 +24,17 @@
     cursor: pointer;
     font-size: 15px;
     background: #009EDC;
-    border: 1px solid #009EDC;
+    border: 4px solid #009EDC;
     color: #fff;
     padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: bold;
+  
   }
   
   input[type="submit"]:hover {
     background: #009EDC;
+    
   }
   
   .button-container {
@@ -38,8 +44,9 @@
   
   .login-form {
     background-color: white;
-    padding: 9rem;
+    padding: 14rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
   }
   
   .list-container {
@@ -48,14 +55,18 @@
   
   .error {
     color: red;
-    font-size: 11px;
+    font-size: 14px;
+    font-weight: bold;
   }
-  
+  .container{
+    width: 90%;
+  }
   .title {
     font-size: 28px;
     margin-bottom: 20px;
     color: #009EDC;
-    font-weight: bold;
+    
+    
   }
   
   .input-container {
@@ -64,3 +75,56 @@
     gap: 8px;
     margin: 10px;
   }
+  
+  .mainPicture{
+    
+    height:80px;
+    right : 50%;
+    margin: auto;
+  display: block;
+    
+    
+      margin: 0 auto;
+      border-radius: 10px;
+      
+      
+    
+      
+  }
+  .cisco{
+    
+    height:45px;
+    right : 50%;
+    
+    
+      margin: 0 auto;
+      
+      
+      
+    
+      
+  }
+  .logged{
+    font-weight: bold;
+    color:#009EDC
+
+  }
+  .ok{
+    
+    
+    font-size: 15px;
+    
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  
+    padding: 10px 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    color:#009EDC  
+  }
+.button{
+  position:absolute;
+  top: 10px;
+  right:0;
+}

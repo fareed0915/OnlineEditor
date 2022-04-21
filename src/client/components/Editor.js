@@ -6,7 +6,121 @@ import AlertDismissable from './controls/AlertDismissable';
 import OutputBox from './controls/OutputBox';
 import StatusImage from './controls/StatusImage';
 import CompilerApi from '../api/CompilerApi';
+import { ButtonToolbar } from 'react-bootstrap';
+import "/Users/fareedbalogun/Desktop/my-app/code-editor-react/src/client/components/styles.css";
+var example = `{   
+  "object": "file",
+  "type":"json",
+  "name": "source_code.c",
+  "argc": null,
+  "value" : null,
+  "arguments": [], 
+  "include": ["stdio.h", "stdbool.h"," base64.h"],
+  "variables": [],
+  "functions": [
+                  {   
+                      "object": "function",
+                      "type":"integer",
+                      "name": "main",
+                      "argc": 0,
+                      "arguments": [], 
+                      "include": [],
+                      "variables": [],
+                      "functions": [{"name":"args_error"}]
+                  }, 
+                  {   
+                      "object": "function",
+                      "type":"void",
+                      "name": "welcome",
+                      "argc": 0,
+                      "value" : null,
+                      "arguments": [], 
+                      "include": [],
+                      "variables": [],
+                      "functions": [{"name":"usage"}]
+                      
+                  },
+                  {   
+                      "object": "function",
+                      "type":"void",
+                      "name": "usage",
+                      "argc": 0,
+                      "value" : null,
+                      "arguments": [], 
+                      "include": [],
+                      "variables": [],
+                      "functions": []
 
+                  }, 
+                  {   
+                      "object": "function",
+                      "type":"void",
+                      "name": "do_and_print",
+                      "argc": 0,
+                      "value" : null,
+                      "arguments": [], 
+                      "include": [],
+                      "variables": [  
+                                      {   
+                                          "object": "variable",
+                                          "type":"integer - size_t",
+                                          "name": "usage",
+                                          "argc": null,
+                                          "value" : 0,
+                                          "arguments": null,
+                                          "include": null,
+                                          "variables": null,
+                                          "functions": null
+                                      }
+                                  ],
+                      "functions": []
+                  },
+                  {   
+                      "object": "function",
+                      "type":"void",
+                      "name": "do_and_save",
+                      "argc": 0,
+                      "arguments": [], 
+                      "include": [],
+                      "variables": [  
+                                      {   
+                                          "object": "variable",
+                                          "type":"FILE",
+                                          "name": "dest_file",
+                                          "argc": null,
+                                          "value" : "directory",
+                                          "arguments": null,
+                                          "include": null,
+                                          "variables": null,
+                                          "functions": null
+                                      }
+                  ],
+                      "functions": []
+                  },
+                  {   
+                      "object": "function",
+                      "type":"bool",
+                      "name": "file_exits",
+                      "argc": 0,
+                      "value" : null,
+                      "arguments": [], 
+                      "include": [],
+                      "variables": [],
+                      "functions": []
+                  },
+                  {   
+                      "object": "function",
+                      "type":"void",
+                      "name": "args_error",
+                      "argc": 0,
+                      "value" : null,
+                      "arguments": [], 
+                      "include": [],
+                      "variables": [],
+                      "functions": []
+                  } 
+              ]
+}`;
 let languages = ['JavaScript', 'Python', 'Java', 'C', 'C++'];
 const languagesProd = ['JavaScript', 'Python'];
 
@@ -89,9 +203,18 @@ class Editor extends React.Component {
 
   render() {
     return (
+      
       <div className="container">
+        
         <Form horizontal>
           <FormGroup controlId="code">
+          <Col sm={12}>
+              <ButtonToolbar>
+                <Button bsStyle="info" class= "source_code" bsStyle="info" onClick={()=>{alert(example)}}>
+                  Source Code Analysis
+                </Button>
+              </ButtonToolbar>
+            </Col>
             <Col sm={12}>
               <LangSelector
                 langs={languages}
@@ -107,13 +230,14 @@ class Editor extends React.Component {
           </FormGroup>
           <FormGroup>
             <Col sm={2}>
-              <Button bsStyle="primary" type="button" onClick={this.handleRun}>
+              <Button bsStyle="info" type="button" onClick={this.handleRun}>
                 Run
               </Button>
               <StatusImage
                 hasError={this.state.response.status !== '0'}
                 message={this.state.response.message}
               />
+              
             </Col>
             <Col sm={10} />
           </FormGroup>
@@ -123,6 +247,7 @@ class Editor extends React.Component {
                 show={this.state.response.status !== '0'}
                 message={this.state.response.message}
               />
+              
             </Col>
           </FormGroup>
           <FormGroup>
@@ -134,6 +259,11 @@ class Editor extends React.Component {
             </Col>
           </FormGroup>
         </Form>
+        <Col sm={12}>
+              <ButtonToolbar>
+                <Button bsStyle="info" class= "button"  href="/" >Logout</Button>
+              </ButtonToolbar>
+            </Col>
       </div>
     );
   }

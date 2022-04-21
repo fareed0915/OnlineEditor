@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { Link } from 'react-router-dom'
+import LangSelector from './controls/LangSelector';
+import LangSelector2 from "/Users/fareedbalogun/Desktop/my-app/code-editor-react/src/client/components/controls/LangSelector2.js"
 
 import "/Users/fareedbalogun/Desktop/my-app/code-editor-react/src/client/components/styles.css";
-var cisco= document.createElement("img");
-cisco.src="/Users/fareedbalogun/Desktop/my-app/code-editor-react/public/images/cisco_corporate_logo_blue2-jpg-1889920-1-0.jpg"
-document.body.appendChild(cisco)
+function SetTimeout(){
+  setTimeout(function(){
+    location.reload();
+  }, 1);
+}
+
 function Login() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
@@ -23,8 +29,8 @@ function Login() {
   ];
 
   const errors = {
-    uname: "invalid username",
-    pass: "invalid password"
+    uname: "Invalid Username",
+    pass: "Invalid Password"
   };
 
   const handleSubmit = (event) => {
@@ -80,9 +86,29 @@ function Login() {
   return (
     <div className="app">
       <div className="login-form">
-      <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com"/>
-        <div className="title"> Cisco Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+      <img src="https://logos-world.net/wp-content/uploads/2021/08/Cisco-Logo.png" class="mainPicture"/>
+     
+        
+        {isSubmitted ? <div>
+                  <div className="logged">
+                    User is successfully logged in !
+                  </div >
+                  <Link to="/editor" className="ok">
+                    
+                    <button onClick={SetTimeout}>
+                      Sign In
+                    </button>
+                    
+                    
+                  </Link>
+
+                  
+                  
+
+          </div> 
+          
+          
+          : renderForm}
       </div>
     </div>
   );
